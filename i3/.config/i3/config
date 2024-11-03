@@ -49,7 +49,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -188,3 +188,35 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+gaps inner 32
+
+# Center window titles
+title_align center
+# Set font
+font pango:DejaVu Sans Mono 10
+
+
+# Set default border style to pixel with a width of 1
+default_border pixel 4
+default_floating_border pixel 4
+
+# Remove title bars for all windows
+for_window [class="^.*"] border pixel 0
+
+# Define colors
+set $bg-color #44e36e
+set $inactive-bg-color #3e4451
+set $text-color #abb2bf
+set $inactive-text-color #5c6370
+set $urgent-bg-color #e06c75
+set $focused-border-color #44e36e
+set $inactive-border-color #3e4451
+set $urgent-border-color #e06c75
+
+# Class colors
+client.focused #1c4d12 #285577 #ffffff #2e9ef4 #31911d
+
+
+exec_always feh --bg-fill ~/Pictures/wallpaper.jpeg
+exec_always picom
