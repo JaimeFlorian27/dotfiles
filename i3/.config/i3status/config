@@ -15,6 +15,7 @@ general {
         color_bad = "#ff2200"
 }
 
+order += "battery 0"
 order += "tztime localdate"
 order += "tztime localtime"
 
@@ -47,12 +48,16 @@ ethernet eno16777736 {
         format_down = "  "
 }
 
-battery 1 {
-        format = "  %status %percentage "
-        last_full_capacity = false
-        integer_battery_capacity = true
-        low_threshold = 20
-        threshold_type = percentage
+battery 0 {
+        format = "%status %percentage, Remaining: %remaining"
+        format_down = "No battery"
+        status_chr = "⚡ CHR"
+        status_bat = "🔋 BAT"
+        status_unk = "? UNK"
+        status_full = "☻ FULL"
+        status_idle = "☻ IDLE"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 10
 }
 
 cpu_temperature 0 {
