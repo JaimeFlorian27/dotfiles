@@ -216,5 +216,5 @@ bindsym $mod+Shift+l move right
 bindsym XF86MonBrightnessUp exec brightnessctl set +2%
 bindsym XF86MonBrightnessDown exec brightnessctl set 2%-
 
-exec_always feh --bg-fill ~/Pictures/wallpaper.jpeg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpeg
 exec_always --no-startup-id $HOME/.config/polybar/polybar.sh
