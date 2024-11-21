@@ -172,7 +172,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-gaps inner 16
+gaps inner 4
 
 # Center window titles
 title_align center
