@@ -1,0 +1,6 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/onedark.toml"
+]
+[font]
+normal = {family = "commitmono nerdfont"}
